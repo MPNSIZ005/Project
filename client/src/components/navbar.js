@@ -12,7 +12,7 @@ export default function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <NavLink className="navbar-brand" to="/">
-        <img style={{"width" : 25 + '%'}} src="./img/dark.jpg" alt="Home"></img>
+        <img class="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto" src="./light.png" alt="Home"></img>
         </NavLink>
         <button
           className="navbar-toggler"
@@ -29,8 +29,13 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/create">
+              <NavLink class = "text-blue-600"className="nav-link" to="/create">
                 Create Record
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to ="/createarticle">
+                Create Article
               </NavLink>
             </li>
           </ul>

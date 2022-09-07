@@ -7,6 +7,7 @@ const client = new MongoClient(Db, {
 });
 
 var _db;
+//var _db2;
 
 module.exports = {
   connectToServer: function (callback) {
@@ -15,12 +16,17 @@ module.exports = {
       if (db)
       {
         _db = db.db("researchers");
+        //_db2 = db.db("articles");
         console.log("Successfully connected to MongoDB."); 
       }
       return callback(err);
          });
   },
 
+ /* getDb2: function() {
+    return _db2;
+  },
+*/
   getDb: function () {
     return _db;
   },

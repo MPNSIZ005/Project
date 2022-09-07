@@ -46,11 +46,11 @@ export default function Create() {
 
   // This following section will display the form that takes the input from the user.
   return (
-    <div>
+    <div className="flex justify-items-center">
       <h3>Create New Researcher</h3>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Surname</label>
+          <label class = "block text-red-200" htmlFor="name">Surname</label>
           <input
             type="text"
             className="form-control"
@@ -63,7 +63,7 @@ export default function Create() {
           <label htmlFor="initials">Initials</label>
           <input
             type="text"
-            className="form-control"
+            className="form-control mt-2"
             id="initials"
             value={form.initials}
             onChange={(e) => updateForm({ initials: e.target.value })}
