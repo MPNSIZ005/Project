@@ -40,12 +40,14 @@ recordRoutes.route("/record/:id").get(function (req, res) {
 recordRoutes.route("/record/add").post(function (req, response) {
   let db_connect = dbo.getDb();
   let myobj = {
-    nameAndSurname: req.body.nameAndSurname,
+    surname: req.body.surname,
+    initials: req.body.initials,
     institution: req.body.institution,
     email: req.body.email,
     specialisation: req.body.specialisation,
     publications: req.body.publications,
-    totalCitations: req.body.totalCitations
+    totalCitations: req.body.totalCitations,
+    gender: req.body.gender
   };
   db_connect.collection("records").insertOne(myobj, function (err, res) {
     if (err) throw err;
@@ -59,12 +61,14 @@ recordRoutes.route("/update/:id").post(function (req, response) {
   let myquery = { _id: ObjectId( req.params.id )};
   let newvalues = {
     $set: {
-        nameAndSurname: req.body.nameAndSurname,
+        surname: req.body.surname,
+        initials: req.body.initials,
         institution: req.body.institution,
         email: req.body.email,
         specialisation: req.body.specialisation,
         publications: req.body.publications,
-        totalCitations: req.body.totalCitations
+        totalCitations: req.body.totalCitations,
+        gender: req.body.gender
     },
   };
   db_connect

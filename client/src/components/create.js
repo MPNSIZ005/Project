@@ -3,12 +3,14 @@ import { useNavigate } from "react-router";
 
 export default function Create() {
   const [form, setForm] = useState({
-    nameAndSurname: "", 
+    surname: "",
+    initials: "",
     institution: "", 
     email: "", 
     specialisation: "", 
     publications: "", 
-    totalCitations: ""
+    totalCitations: "",
+    gender: ""
   });
   const navigate = useNavigate();
 
@@ -38,7 +40,7 @@ export default function Create() {
       return;
     });
 
-    setForm({ nameAndSurname: "", institution: "", email: "", specialisation: "", publications: "", totalCitations: "" });
+    setForm({ surname: "", initials: "", institution: "", email: "", specialisation: "", publications: "", totalCitations: "", gender: "" });
     navigate("/");
   }
 
@@ -48,13 +50,23 @@ export default function Create() {
       <h3>Create New Researcher</h3>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="nameAndSurname">Name and Surname</label>
+          <label htmlFor="name">Surname</label>
           <input
             type="text"
             className="form-control"
-            id="nameAndSurname"
-            value={form.nameAndSurname}
-            onChange={(e) => updateForm({ nameAndSurname: e.target.value })}
+            id="surname"
+            value={form.surname}
+            onChange={(e) => updateForm({ surname: e.target.value })}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="initials">Initials</label>
+          <input
+            type="text"
+            className="form-control"
+            id="initials"
+            value={form.initials}
+            onChange={(e) => updateForm({ initials: e.target.value })}
           />
         </div>
         <div className="form-group">
@@ -68,7 +80,7 @@ export default function Create() {
           />
         </div>
         <div className="form-group">
-        <label htmlFor="email">Email</label>
+          <label htmlFor="email">Email</label>
           <input
             type="text"
             className="form-control"
@@ -98,13 +110,23 @@ export default function Create() {
           />
         </div>
         <div className="form-group">
-        <label htmlFor="totalCitations">Total Citations</label>
+        <label htmlFor="totalCitations">Citations</label>
           <input
             type="text"
             className="form-control"
             id="totalCitations"
             value={form.totalCitations}
             onChange={(e) => updateForm({ totalCitations: e.target.value })}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="gender">Gender</label>
+          <input
+            type="text"
+            className="form-control"
+            id="gender"
+            value={form.gender}
+            onChange={(e) => updateForm({ gender: e.target.value })}
           />
         </div>
         <div className="form-group">

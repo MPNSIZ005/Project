@@ -3,12 +3,14 @@ import { useParams, useNavigate } from "react-router";
 
 export default function Edit() {
   const [form, setForm] = useState({
-    nameAndSurname: "",
+    surname: "",
+    initials: "",
     institution: "",
     email: "",
     specialisation: "",
     publications: "",
     totalCitations: "",
+    gender: "",
     records: [],
   });
   const params = useParams();
@@ -50,12 +52,14 @@ export default function Edit() {
   async function onSubmit(e) {
     e.preventDefault();
     const editedPerson = {
-      nameAndSurname: form.nameAndSurname,
+      surname: form.surname,
+      initials: form.initials,
       institution: form.institution,
       email: form.email,
       specialisation: form.specialisation,
       publications: form.publications,
-      totalCitations: form.totalCitations
+      totalCitations: form.totalCitations,
+      gender: form.gender
     };
 
     // This will send a post request to update the data in the database.
@@ -76,13 +80,23 @@ export default function Edit() {
       <h3>Update Record</h3>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="nameAndSurname">Name and Surname: </label>
+          <label htmlFor="surname">Surname: </label>
           <input
             type="text"
             className="form-control"
-            id="nameAndSurname"
-            value={form.nameAndSurname}
-            onChange={(e) => updateForm({ nameAndSurname: e.target.value })}
+            id="surname"
+            value={form.surname}
+            onChange={(e) => updateForm({ surname: e.target.value })}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="initials">Initials</label>
+          <input
+            type="text"
+            className="form-control"
+            id="initials"
+            value={form.initials}
+            onChange={(e) => updateForm({ initials: e.target.value })}
           />
         </div>
         <div className="form-group">
@@ -126,13 +140,23 @@ export default function Edit() {
           />
         </div>
         <div className="form-group">
-        <label htmlFor="totalCitations">Total Citations</label>
+        <label htmlFor="totalCitations">Citations</label>
           <input
             type="text"
             className="form-control"
             id="totalCitations"
             value={form.totalCitations}
             onChange={(e) => updateForm({ totalCitations: e.target.value })}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="gender">Gender</label>
+          <input
+            type="text"
+            className="form-control"
+            id="gender"
+            value={form.gender}
+            onChange={(e) => updateForm({ gender: e.target.value })}
           />
         </div>
         <br />
