@@ -72,9 +72,9 @@ export default function RecordList() {
 
   // This following section will display the table with the records of individuals.
   return (
-    <div>
+    <div class = "container-fluid">
       <h3>Record List</h3>
-      <table className="table table-striped justify-items-start" style={{ marginTop: 20 }}>
+      <table class="table table-striped table-bordered table-condensed" style={{ marginTop: 20 }}>
         <thead>
           <tr>
             <th>Surname</th>
@@ -85,6 +85,7 @@ export default function RecordList() {
             <th>Publications</th>
             <th>Citations</th>
             <th>Gender</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>{recordList()}</tbody>

@@ -10,8 +10,8 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <NavLink className="navbar-brand" to="/">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <NavLink class="navbar-brand" to="/">
         <img class="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto" src="./light.png" alt="Home"></img>
         </NavLink>
         <button

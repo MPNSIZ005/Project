@@ -72,15 +72,16 @@ export default function ArticleList() {
   return (
     <div>
       <h3>Article List</h3>
-      <table className="table table-striped" style={{ marginTop: 20 }}>
+      <table class="table table-striped table-dark" style={{ marginTop: 20 }}>
         <thead>
           <tr>
             <th>Title</th>
-            <th>Author</th>
-            <th>Date</th>
+            <th>Author     </th>
+            <th>Year</th>
             <th>Citations</th>
             <th>Link</th>
             <th>Funding</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>{ArticleList()}</tbody>

@@ -20,7 +20,7 @@ export default function EditArticle() {
       const response = await fetch(`http://localhost:4000/recordarticle/${params.id.toString()}`);
 
       if (!response.ok) {
-        const message = `An error has occured: ${response.statusText}`;
+        const message = `This error has occured: ${response.statusText}`;
         window.alert(message);
         return;
       }
