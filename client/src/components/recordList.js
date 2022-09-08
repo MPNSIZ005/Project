@@ -73,7 +73,9 @@ export default function RecordList() {
   // This following section will display the table with the records of individuals.
   return (
     <div class = "container-fluid">
+      <div class="text-warning">
       <h3>Record List</h3>
+      </div>
       <table class="table table-striped table-bordered table-condensed" style={{ marginTop: 20 }}>
         <thead>
           <tr>

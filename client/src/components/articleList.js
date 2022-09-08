@@ -71,8 +71,10 @@ export default function ArticleList() {
   // This following section will display the table with the records of individuals.
   return (
     <div>
+      <div class = "text-primary p-3 mb-2 bg-secondary text-white">
       <h3>Article List</h3>
-      <table class="table table-striped table-dark" style={{ marginTop: 20 }}>
+      </div>
+      <table class="table table-striped table-dark table-responsive" style={{ marginTop: 20 }}>
         <thead>
           <tr>
             <th>Title</th>

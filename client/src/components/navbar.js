@@ -12,7 +12,7 @@ export default function Navbar() {
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <NavLink class="navbar-brand" to="/">
-        <img class="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto" src="./light.png" alt="Home"></img>
+        <img src="./light.png" alt="Home"></img>
         </NavLink>
         <button
           className="navbar-toggler"
@@ -28,8 +28,8 @@ export default function Navbar() {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <NavLink class = "text-blue-600"className="nav-link" to="/create">
+            <li class="nav-item text-info">
+              <NavLink className="nav-link" to="/create">
                 Create Record
               </NavLink>
             </li>

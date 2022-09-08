@@ -82,7 +82,7 @@ export default function Create() {
         <div className="form-group">
           <label htmlFor="email">Email</label>
           <input
-            type="text"
+            type="email"
             className="form-control"
             id="email"
             value={form.email}
