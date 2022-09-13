@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 
 const Record = (props) => (
   <tr>
-    <td>{props.record.surname}</td>
-    <td>{props.record.initials}</td>
+    <td>{props.record.nameAndSurname}</td>
     <td>{props.record.institution}</td>
     <td>{props.record.email}</td>
     <td>{props.record.specialisation}</td>
@@ -79,8 +78,7 @@ export default function RecordList() {
       <table class="table table-striped table-bordered table-condensed" style={{ marginTop: 20 }}>
         <thead>
           <tr>
-            <th>Surname</th>
-            <th>Initials</th>
+            <th>Name</th>
             <th>Institution</th>
             <th>Email</th>
             <th>Specialisation</th>

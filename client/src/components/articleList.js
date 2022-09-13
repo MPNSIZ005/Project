@@ -37,6 +37,7 @@ export default function ArticleList() {
       }
 
       const recordarticles = await response.json();
+      console.log(recordarticles)
       setArticles(recordarticles);
     }
 
