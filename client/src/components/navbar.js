@@ -12,7 +12,7 @@ export default function Navbar() {
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <NavLink class="navbar-brand" to="/">
-        <img src={light} width={140} height="100" alt="Home"></img>
+        <img src={light} width={140} height="120" alt="Home"></img>
         </NavLink>
         <button
           className="navbar-toggler"
@@ -31,15 +31,15 @@ export default function Navbar() {
           <ul className="navbar-nav ml-auto">
             <li class="btn btn-info">
               <NavLink className="nav-link" to="/researchers">
-                <h3>View All</h3>
-                <h3>Researchers</h3>
+                <h2>View All</h2>
+                <h2>Researchers</h2>
               </NavLink>
             </li>
   
             <li className="btn btn-success">
               <NavLink className="nav-link" to ="/articles">
-                <h3>View All</h3>
-                <h3>Articles</h3>
+                <h2>View All</h2>
+                <h2>Articles</h2>
               </NavLink>
             </li>
           </ul>
