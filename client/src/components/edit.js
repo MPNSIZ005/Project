@@ -8,7 +8,6 @@ export default function Edit() {
     email: "",
     specialisation: "",
     publications: "",
-    totalCitations: "",
     gender: "",
     records: [],
   });
@@ -56,7 +55,6 @@ export default function Edit() {
       email: form.email,
       specialisation: form.specialisation,
       publications: form.publications,
-      totalCitations: form.totalCitations,
       gender: form.gender
     };
 
@@ -125,16 +123,6 @@ export default function Edit() {
             id="publications"
             value={form.publications}
             onChange={(e) => updateForm({ publications: e.target.value })}
-          />
-        </div>
-        <div className="form-group">
-        <label htmlFor="totalCitations">Citations</label>
-          <input
-            type="text"
-            className="form-control"
-            id="totalCitations"
-            value={form.totalCitations}
-            onChange={(e) => updateForm({ totalCitations: e.target.value })}
           />
         </div>
         <div className="form-group">

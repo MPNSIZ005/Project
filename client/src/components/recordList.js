@@ -8,7 +8,6 @@ const Record = (props) => (
     <td>{props.record.email}</td>
     <td>{props.record.specialisation}</td>
     <td>{props.record.publications}</td>
-    <td>{props.record.totalCitations}</td>
     <td>{props.record.gender}</td>
     <td>
       <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> |
@@ -26,7 +25,7 @@ const Record = (props) => (
 export default function RecordList() {
   const [records, setRecords] = useState([]);
 
-  // This method fetches the records from the database.
+  //---------------This method fetches the records from the database.-----------------------
   useEffect(() => {
     async function getRecords() {
       const response = await fetch(`http://localhost:4000/record/`);
@@ -83,7 +82,6 @@ export default function RecordList() {
             <th>Email</th>
             <th>Specialisation</th>
             <th>Publications</th>
-            <th>Citations</th>
             <th>Gender</th>
             <th></th>
           </tr>

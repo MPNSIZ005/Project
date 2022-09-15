@@ -12,7 +12,7 @@ export default function Navbar() {
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <NavLink class="navbar-brand" to="/">
-        <img src={light} width={140} height="120" alt="Home"></img>
+        <img src={light} width={140} height="100" alt="Home"></img>
         </NavLink>
         <button
           className="navbar-toggler"

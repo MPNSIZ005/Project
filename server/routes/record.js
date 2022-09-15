@@ -57,7 +57,6 @@ recordRoutes.route("/record/add").post(function (req, response) {
     email: req.body.email,
     specialisation: req.body.specialisation,
     publications: req.body.publications,
-    totalCitations: req.body.totalCitations,
     gender: req.body.gender
   };
   db_connect.collection("records").insertOne(myobj, function (err, res) {
@@ -77,7 +76,6 @@ recordRoutes.route("/update/:id").post(function (req, response) {
         email: req.body.email,
         specialisation: req.body.specialisation,
         publications: req.body.publications,
-        totalCitations: req.body.totalCitations,
         gender: req.body.gender
     },
   };
