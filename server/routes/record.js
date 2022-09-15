@@ -24,6 +24,18 @@ recordRoutes.route("/record").get(function (req, res) {
     });
 });
 
+//Get a single record by author name
+recordRoutes.route("/record/:nameAndSurname").get(function (req, res) {
+  let db_connect = dbo.getDb();
+  let myquery = { _id: ObjectId( req.params.nameAndSurname )};
+  db_connect
+      .collection("records")
+      .findOne(myquery, function (err, result) {
+        if (err) throw err;
+        res.json(result);
+      });
+});
+
 // This section will help you get a single record by id
 recordRoutes.route("/record/:id").get(function (req, res) {
   let db_connect = dbo.getDb();

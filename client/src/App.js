@@ -19,14 +19,14 @@ const App = () => {
             <Navbar />
             <div class = "list-inline">
                 <Routes>
-                    <Route exact path="/" element={<RecordList />} />
+                    <Route path="/researchers" element={<RecordList />} />
                     <Route path="/edit/:id" element={<Edit />} />
                     <Route path="/create" element={<Create />} />
                 </Routes>
             </div>
             <div>
                 <Routes>
-                    <Route exact path="/" element={<ArticleList/>} />
+                    <Route path="/articles" element={<ArticleList/>} />
                     <Route path="/editarticle/:id" element={<EditArticle/>} />
                     <Route path="/createarticle" element={<CreateArticle/>} />
                 </Routes>
