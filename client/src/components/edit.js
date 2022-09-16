@@ -3,13 +3,11 @@ import { useParams, useNavigate } from "react-router";
 
 export default function Edit() {
   const [form, setForm] = useState({
-    surname: "",
-    initials: "",
+    nameAndSurname: "",
     institution: "",
     email: "",
     specialisation: "",
     publications: "",
-    totalCitations: "",
     gender: "",
     records: [],
   });
@@ -52,13 +50,11 @@ export default function Edit() {
   async function onSubmit(e) {
     e.preventDefault();
     const editedPerson = {
-      surname: form.surname,
-      initials: form.initials,
+      nameAndSurname: form.nameAndSurname,
       institution: form.institution,
       email: form.email,
       specialisation: form.specialisation,
       publications: form.publications,
-      totalCitations: form.totalCitations,
       gender: form.gender
     };
 
@@ -80,23 +76,13 @@ export default function Edit() {
       <h3>Update Record</h3>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="surname">Surname: </label>
+          <label htmlFor="nameAndSurname">Name: </label>
           <input
             type="text"
             className="form-control"
-            id="surname"
-            value={form.surname}
-            onChange={(e) => updateForm({ surname: e.target.value })}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="initials">Initials</label>
-          <input
-            type="text"
-            className="form-control"
-            id="initials"
-            value={form.initials}
-            onChange={(e) => updateForm({ initials: e.target.value })}
+            id="nameAndSurname"
+            value={form.nameAndSurname}
+            onChange={(e) => updateForm({ nameAndSurname: e.target.value })}
           />
         </div>
         <div className="form-group">
@@ -137,16 +123,6 @@ export default function Edit() {
             id="publications"
             value={form.publications}
             onChange={(e) => updateForm({ publications: e.target.value })}
-          />
-        </div>
-        <div className="form-group">
-        <label htmlFor="totalCitations">Citations</label>
-          <input
-            type="text"
-            className="form-control"
-            id="totalCitations"
-            value={form.totalCitations}
-            onChange={(e) => updateForm({ totalCitations: e.target.value })}
           />
         </div>
         <div className="form-group">

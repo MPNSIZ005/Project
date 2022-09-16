@@ -3,13 +3,11 @@ import { useNavigate } from "react-router";
 
 export default function Create() {
   const [form, setForm] = useState({
-    surname: "",
-    initials: "",
+    nameAndSurname: "",
     institution: "", 
     email: "", 
     specialisation: "", 
     publications: "", 
-    totalCitations: "",
     gender: ""
   });
   const navigate = useNavigate();
@@ -40,7 +38,7 @@ export default function Create() {
       return;
     });
 
-    setForm({ surname: "", initials: "", institution: "", email: "", specialisation: "", publications: "", totalCitations: "", gender: "" });
+    setForm({ nameAndSurname: "", institution: "", email: "", specialisation: "", publications: "", gender: "" });
     navigate("/");
   }
 
@@ -50,23 +48,13 @@ export default function Create() {
       <h3>Create New Researcher</h3>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="name">Surname</label>
+          <label htmlFor="nameAndSurname">Name</label>
           <input
             type="text"
             className="form-control"
-            id="surname"
+            id="nameAndSurname"
             value={form.surname}
-            onChange={(e) => updateForm({ surname: e.target.value })}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="initials">Initials</label>
-          <input
-            type="text"
-            className="form-control mt-2"
-            id="initials"
-            value={form.initials}
-            onChange={(e) => updateForm({ initials: e.target.value })}
+            onChange={(e) => updateForm({ nameAndSurname: e.target.value })}
           />
         </div>
         <div className="form-group">
@@ -107,16 +95,6 @@ export default function Create() {
             id="publications"
             value={form.publications}
             onChange={(e) => updateForm({ publications: e.target.value })}
-          />
-        </div>
-        <div className="form-group">
-        <label htmlFor="totalCitations">Citations</label>
-          <input
-            type="text"
-            className="form-control"
-            id="totalCitations"
-            value={form.totalCitations}
-            onChange={(e) => updateForm({ totalCitations: e.target.value })}
           />
         </div>
         <div className="form-group">

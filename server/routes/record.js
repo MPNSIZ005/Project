@@ -24,6 +24,18 @@ recordRoutes.route("/record").get(function (req, res) {
     });
 });
 
+//Get a single record by author name
+recordRoutes.route("/record/:nameAndSurname").get(function (req, res) {
+  let db_connect = dbo.getDb();
+  let myquery = { _id: ObjectId( req.params.nameAndSurname )};
+  db_connect
+      .collection("records")
+      .findOne(myquery, function (err, result) {
+        if (err) throw err;
+        res.json(result);
+      });
+});
+
 // This section will help you get a single record by id
 recordRoutes.route("/record/:id").get(function (req, res) {
   let db_connect = dbo.getDb();
@@ -40,13 +52,11 @@ recordRoutes.route("/record/:id").get(function (req, res) {
 recordRoutes.route("/record/add").post(function (req, response) {
   let db_connect = dbo.getDb();
   let myobj = {
-    surname: req.body.surname,
-    initials: req.body.initials,
+    nameAndSurname: req.body.nameAndSurname,
     institution: req.body.institution,
     email: req.body.email,
     specialisation: req.body.specialisation,
     publications: req.body.publications,
-    totalCitations: req.body.totalCitations,
     gender: req.body.gender
   };
   db_connect.collection("records").insertOne(myobj, function (err, res) {
@@ -61,13 +71,11 @@ recordRoutes.route("/update/:id").post(function (req, response) {
   let myquery = { _id: ObjectId( req.params.id )};
   let newvalues = {
     $set: {
-        surname: req.body.surname,
-        initials: req.body.initials,
+        nameAndSurname: req.body.nameAndSurname,
         institution: req.body.institution,
         email: req.body.email,
         specialisation: req.body.specialisation,
         publications: req.body.publications,
-        totalCitations: req.body.totalCitations,
         gender: req.body.gender
     },
   };

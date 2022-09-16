@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@mongodb-js/charts-embed-dom": "^2.2.0",
+    "apollo-server": "^3.10.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
