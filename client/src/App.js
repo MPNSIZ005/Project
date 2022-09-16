@@ -1,4 +1,5 @@
 import React from "react";
+import ChartsEmbedSDK from "mongodb-js/charts-embed-dom"
 
 //We will use Route in order to define the different routes in our application
 import { Route, Routes } from "react-router-dom";
@@ -17,6 +18,9 @@ const App = () => {
     return (
         <div>
             <Navbar />
+            <div class ="">
+                {/* <script src="https://unpkg.com/@mongodb-js/charts-embed-dom@beta"></script> */}
+            </div>
             <div class = "list-inline">
                 <Routes>
                     <Route path="/researchers" element={<RecordList />} />
