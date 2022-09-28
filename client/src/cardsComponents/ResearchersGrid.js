@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import ResearcherCard from './ResearcherCard';
 import {useState, useEffect } from 'react'
 //import Axios from 'axios'
-import people from '../Components/records.json';
+import people from '../Data/records.json';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -17,6 +17,11 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 
+/**
+ * ResearchersGrid component displays a grid for the ResearchersCard
+ * This component ensures that the ResearcherCards are displayed in a grid form
+ * 
+ */
 
 export default function ResearchersGrid({searchValue}) {
   console.log(searchValue)
@@ -24,18 +29,10 @@ export default function ResearchersGrid({searchValue}) {
   const [listOfResearchersSearched, setListOfResearchersSearched] = useState([])
   useEffect(() => {
     setListOfResearchers(people.slice(1, 29))
-    // Axios.get("http://localhost:3000/researchers").then((response) => {
-    //   setListOfResearchers(response.data)
-    //   console.log(response.data)
-    // })
+     
   },[])
 
-  // let searchedResearchers = listOfResearchers.filter(researcher => researcher.surname.includes(searchValue));
- // setListOfResearchersSearched(searchedResearchers)
- // console.log(searchedResearchers)
-//.filter(itemFilter => itemFilter.surname.toLowerCase().includes(searchValue.toLowerCase()))
  
-
 
   return (
     <Box sx={{ flexGrow: 1 , padding:5,marginTop:-5}}>
@@ -43,16 +40,7 @@ export default function ResearchersGrid({searchValue}) {
       <Grid container spacing={2}>
         
           
-        
-
-        {
-          /*listOfResearchers.filter(itemFilter => itemFilter.Surname.toLowerCase().includes(searchValue.toLowerCase())).map(researcherItem => (
-            <Grid item xs={3} key={researcherItem.title}>
-            <ResearcherCard researcher={researcherItem}/>
-          </Grid>
-        ))
-        
-        */}
+       
 
         {listOfResearchers.filter(
           (val) => {
@@ -66,7 +54,7 @@ export default function ResearchersGrid({searchValue}) {
           }).map((val,key) => {
             return(
               <Grid item xs={3} key={key}>
-                 <ResearcherCard researcher={val}/>
+                 <ResearcherCard researcher={val} key={key}/>
              </Grid>
             );
         })}
@@ -74,28 +62,7 @@ export default function ResearchersGrid({searchValue}) {
 
         
 
-        {
-          /* 
-
-            <Grid item xs={4}>
-        <ResearcherCard/>
-        </Grid>
-        <Grid item xs={4}>
-        <ResearcherCard/>
-        </Grid>
-        <Grid item xs={4}>
-        <ResearcherCard/>
-        </Grid>
-        <Grid item xs={4}>
-        <ResearcherCard/>
-        </Grid>
-        <Grid item xs={4}>
-        <ResearcherCard/>
-        </Grid>
-
-
-          */
-        }
+      
       </Grid>
 
       

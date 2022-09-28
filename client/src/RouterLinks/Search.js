@@ -22,6 +22,12 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
+/**
+ *  The SearchComponent displays the advanced search feature in the application
+ * Users will be able to perform queries and look through the entire database
+ * with institution, gender or and region
+ * 
+ */
 
 function SearchComponent() {
 

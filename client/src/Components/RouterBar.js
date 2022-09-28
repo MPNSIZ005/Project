@@ -5,22 +5,27 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { CssBaseline, Button } from '@mui/material';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { useNavigate,Link as RouterLink, } from "react-router-dom";
-import Services from '../RouterLinks/Services';
+import { useNavigate,Link as RouterLink, } from "react-router-dom"; 
 import Home from '../RouterLinks/Home';
-import Visuals from '../RouterLinks/Visuals';
-import About from '../RouterLinks/About';
-import CustomerReviews from '../RouterLinks/CustomerReviews';
-import SearchComponent from '../RouterLinks/Search';
-import Person from '../RouterLinks/Person';
+import Visuals from '../RouterLinks/Visuals'; 
+import SearchComponent from '../RouterLinks/Search'; 
+import AllResearchers from '../RouterLinks/AllResearchers';
+
+
+/**
+ * RouterBar contains the Router component which 
+ * allows the user to navigate between different features
+ * such as Advanced Search, Visuals, etc.
+ * 
+ * It contains url paths to navigate the user
+ * 
+ */
 
 function RouterBar() {
 
     const [person, setPerson] = useState("person");
 
-    // this.state = {
-    //     person:"person"
-    // }
+   
   return (
     <div>
         <Router>
@@ -50,21 +55,16 @@ function RouterBar() {
                                 Visuals
                             </Typography>
                         </Button>
-
-                        {/* <Button component={RouterLink} to="/services">
-                            <Typography variant="p" color="white">
-                                Services
-                            </Typography>
-                        </Button> */}
-
-                        {/* <Button component={RouterLink} to="/about">
-                            <Typography variant="p" color="white">
-                                About
-                            </Typography>
-                        </Button> */}
+ 
                          <Button component={RouterLink} to="/search">
                             <Typography variant="p" color="white">
                                 Search
+                            </Typography>
+                        </Button>
+
+                        <Button component={RouterLink} to="/all-researchers">
+                            <Typography variant="p" color="white">
+                                all researchers
                             </Typography>
                         </Button>
                     
@@ -74,22 +74,15 @@ function RouterBar() {
     
                 <Routes>
                     
-                    <Route
-                    exact
-                    path={"/person"}
-                    render={props => (
-                        <Person {...props} status={person}/>
-                    )}
-                    element={<Person status={person}/>}
-                    />
+                     
 
 
                     <Route path="/"  element={<Home setPerson={setPerson}/>}  />
-                    <Route path="/services"  element={<Services/>}   />
+                    
                     <Route path="/search"  element={<SearchComponent/>}/>
-                    <Route path="/visuals"  element={<Visuals/>}/>
-                    <Route path="/about"  element={<About/>}/>
-                    <Route path="/customer-reviews"  element={<CustomerReviews/>}/>
+                    <Route path="/visuals"  element={<Visuals/>}/>  
+                    <Route path="/all-researchers"  element={<AllResearchers/>}/>
+
                 </Routes>
         </Router>
 

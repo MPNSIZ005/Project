@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import "./ResearcherPopUp.css";
 
+/**
+ * CreateResearcherPopUP Component was so the admin could add researchers to the application
+ * 
+ */
+
 export default function Modal() {
   const [modal, setModal] = useState(false);
     

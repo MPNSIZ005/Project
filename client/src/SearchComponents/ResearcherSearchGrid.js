@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import ResearcherCard from '../cardsComponents/ResearcherCard';
 import {useState, useEffect } from 'react'
 import Axios from 'axios'
-import people from '../Components/records.json';
+import people from '../Data/records.json';
  
  
 import Card from '@mui/material/Card';
@@ -26,6 +26,11 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 
+/**
+ * ResearchersGrid component displays a grid for the ResearchersCard when user performs queries
+ * This component ensures that the ResearcherCards are displayed in a grid form
+ * 
+ */
 
 export default function ResearcherSearchGrid({url,params}) {
   //console.log(searchValue)
@@ -43,37 +48,21 @@ export default function ResearcherSearchGrid({url,params}) {
       searchTemp += " from " + params.region + ", ";
     }
     if(params.uni !== " "){
-      searchTemp += " enrolling in " + params.uni + " ";
+      searchTemp += " based in " + params.uni + " ";
     }
 
     if (params.gender == " " && params.query == " " && params.region == " " && params.uni == " "){
       searchTemp += "all researchers";
     } 
-    // console.log(searchTemp)
-    //setSearchString(searchTemp)
-
-
-   //const [researchers,setResearchers] = React.useState([]);
-  //const researchers = listOfResearchers;
- // setResearchers(listOfResearchers);
+   
  console.log(url)
  Axios.get(url).then((response) => {
   setListOfResearchers(response.data)
   console.log(response.data)
-
  
-  //console.log(response.data)
 })
   const [listOfResearchersSearched, setListOfResearchersSearched] = useState([])
-  // useEffect(() => { 
-  //   console.log("getting the information...")
-  //   Axios.get(url).then((response) => {
-  //     setListOfResearchers(response.data)
-  //     console.log(response.data)
-       
-  //   })
-  // },[])
-
+ 
  
 
 
@@ -86,9 +75,7 @@ export default function ResearcherSearchGrid({url,params}) {
 
                 <React.Fragment>
             <CardContent>
-              {/* <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-              {searchTemp}
-              </Typography> */}
+             
               <Typography variant="h5" component="div">
               {searchTemp}
               </Typography>
@@ -103,17 +90,7 @@ export default function ResearcherSearchGrid({url,params}) {
         
       <Grid container spacing={2}>
         
-          
-        
-
-        {
-          /*listOfResearchers.filter(itemFilter => itemFilter.Surname.toLowerCase().includes(searchValue.toLowerCase())).map(researcherItem => (
-            <Grid item xs={3} key={researcherItem.title}>
-            <ResearcherCard researcher={researcherItem}/>
-          </Grid>
-        ))
-        
-        */}
+     
 
         {listOfResearchers.filter(
           (val) => {
@@ -130,31 +107,7 @@ export default function ResearcherSearchGrid({url,params}) {
 
         { listOfResearchers.length==0 ? <h2>No results</h2> : <></> }
         
-
-        
-
-        {
-          /* 
-
-            <Grid item xs={4}>
-        <ResearcherCard/>
-        </Grid>
-        <Grid item xs={4}>
-        <ResearcherCard/>
-        </Grid>
-        <Grid item xs={4}>
-        <ResearcherCard/>
-        </Grid>
-        <Grid item xs={4}>
-        <ResearcherCard/>
-        </Grid>
-        <Grid item xs={4}>
-        <ResearcherCard/>
-        </Grid>
-
-
-          */
-        }
+ 
       </Grid>
 
       

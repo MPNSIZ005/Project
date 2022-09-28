@@ -57,6 +57,18 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
+
+
+/**
+ *  ResearcherCard component contains a card to display information about a researcher such 
+ * as specialisation, nameAndSurname, gender,etc
+ * 
+ * This component also contains a dialog component that appears when a ResearcherCard is clicked
+ * The dialog contains more information about a researcher.
+ * 
+ */
+
+
 export default function ResearcherCard(props) {
 
   const surname  = props.researcher.nameAndSurname;
